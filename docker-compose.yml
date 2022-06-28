@@ -1,0 +1,13 @@
+version: '2.6.0'
+services:
+  db:
+    image: mdillon/postgis
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      PGDATA: /data
+      POSTGRES_DB: geolocator_dev
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_INITDB_ARGS: --data-checksums
